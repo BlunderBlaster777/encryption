@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 30% 50%, #071021, #02030a 70%);
+  color: #dff3ff;
+  overflow-x: hidden;
+}
+
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+#starfield::before,
+#starfield::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: transparent url("data:image/svg+xml,\
+  <svg xmlns='http://www.w3.org/2000/svg' width='3' height='3'>\
+  <circle cx='1.5' cy='1.5' r='1.5' fill='white' opacity='0.8'/>\
+  </svg>") repeat;
+  animation: drift 140s linear infinite;
+  opacity: 0.35;
+}
+
+#starfield::after {
+  animation-duration: 200s;
+  opacity: 0.2;
+}
+
+@keyframes drift {
+  from { transform: translate3d(0,0,0); }
+  to { transform: translate3d(-600px, -600px, 0); }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  color: #9bd7ff;
+  font-size: 18px;
+}
+
+.logo {
+  color: #7ddaff;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 0 12px #00aaff;
+}
+
+.wallet-btn {
+  background: #009dff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 12px #009dff;
+  transition: 0.2s;
+}
+
+.wallet-btn:hover {
+  background: #00b7ff;
+  box-shadow: 0 0 20px #00b7ff;
+}
+
+.wallet-connected {
+  background: #0a1a2f;
+  color: #7ddaff;
+  cursor: default;
+  box-shadow: none;
+}
+
+.tool-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 80px;
+  padding: 0 20px;
+}
+
+.panel {
+  background: rgba(10, 20, 40, 0.55);
+  border: 1px solid rgba(0, 150, 255, 0.4);
+  border-radius: 14px;
+  padding: 30px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.panel h2 {
+  color: #7ddaff;
+  margin-bottom: 10px;
+}
+
+.panel p {
+  color: #cfeaff;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.file-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 150, 255, 0.4);
+  background: rgba(0, 10, 25, 0.6);
+  color: #dff3ff;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.action-btn {
+  width: 100%;
+  padding: 14px;
+  background: #009dff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 0 12px #009dff;
+}
+
+.action-btn:hover {
+  background: #00b7ff;
+  box-shadow: 0 0 18px #00b7ff;
+}
+
+.download-link {
+  display: block;
+  margin-top: 20px;
+  color: #7ddaff;
+  text-decoration: none;
+  font-size: 16px;
+  text-shadow: 0 0 8px #00aaff;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  color: #9bd7ff;
+  opacity: 0.7;
+  margin-top: 80px;
+}

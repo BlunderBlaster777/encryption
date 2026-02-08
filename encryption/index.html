@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AstroDev Encryption Tool</title>
+  <link rel="stylesheet" href="../assets/css/encryption.css" />
+</head>
+
+<body>
+
+  <div id="starfield"></div>
+
+  <nav class="navbar">
+    <a href="/" class="logo">AstroDev Labs</a>
+
+    <button id="connectWalletBtn" class="wallet-btn"
+      onclick="connectWallet()">
+      Connect Wallet
+    </button>
+  </nav>
+
+  <section class="tool-wrapper">
+
+    <div class="panel">
+      <h2>Encrypt File</h2>
+      <p>Select a file and encrypt it using your wallet‑derived key.</p>
+
+      <input type="file" id="encryptInput" class="file-input" />
+
+      <button class="action-btn" onclick="encryptFile()">
+        Encrypt
+      </button>
+
+      <a id="downloadEncrypted" class="download-link" style="display:none;">
+        Download Encrypted File
+      </a>
+    </div>
+
+    <div class="panel">
+      <h2>Decrypt File</h2>
+      <p>Upload a .encrypted file and decrypt it with your wallet key.</p>
+
+      <input type="file" id="decryptInput" class="file-input" />
+
+      <button class="action-btn" onclick="decryptFile()">
+        Decrypt
+      </button>
+
+      <a id="downloadDecrypted" class="download-link" style="display:none;">
+        Download Decrypted File
+      </a>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    © 2026 AstroDev Labs — Built by Alexander Ryder
+  </footer>
+
+  <script src="../assets/js/wallet.js"></script>
+  <script src="../assets/js/encrypt.js"></script>
+  <script src="../assets/js/decrypt.js"></script>
+
+</body>
+</html>
